@@ -36,8 +36,6 @@ function getPlot(id) {
     d3.json('samples.json').then(data => {
         // console.log(data);
 
-        let washfreq = data.metadata.map(d => d.washfreq);
-
         let samp = data.samples.filter(s => s.id.toString() === id)[0];
         // console.log(samp);
 
@@ -97,7 +95,16 @@ function getPlot(id) {
 
         Plotly.newPlot("bubble", bubbleData, layout2)
 
+    });
+};
 
+// build function that retrieves metadata information
+function getInfo(id) {
+    d3.json('samples.json').then(data => {
+
+        // get metadata info
+        let metadata = data.metadata;
+        console.log(metadata);
 
     });
 };
