@@ -52,6 +52,7 @@ function getPlot(id) {
         // console.log(sampleValues);
         // console.log(idValues);
 
+        // BAR CHART
         // create trace variable
         let trace1 = {
             x: sampleValues,
@@ -74,6 +75,8 @@ function getPlot(id) {
         // create horizontal bar plot
         Plotly.newPlot("bar", barData, layout);
         
+        
+        // BUBBLE CHART
         // set up trace for bubble chart
         let trace2 = {
             x: samp.otu_ids,
