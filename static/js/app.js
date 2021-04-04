@@ -1,5 +1,5 @@
 d3.json('samples.json').then(data => {
-    console.log(data);
+    // console.log(data);
 });
 
 // Create initial function 
@@ -12,7 +12,7 @@ function init() {
 
     // read the data
     d3.json('samples.json').then(data => {
-        console.log(data);
+        // console.log(data);
 
         // get id into dropdown menu
         data.names.forEach(function(name) {
@@ -20,7 +20,7 @@ function init() {
         });
 
         getPlot(data.names[0]);
-        // getInfo(data.names[0]);
+        getInfo(data.names[0]);
     });
 };
 
@@ -45,12 +45,12 @@ function getPlot(id) {
         let idValues = (samp.otu_ids.slice(0,10)).reverse();
 
         let idtu = idValues.map(d => "OTU " + d)
-        console.log(idtu);
+        // console.log(idtu);
 
         let lables = samp.otu_labels.slice(0,10);
 
-        console.log(sampleValues);
-        console.log(idValues);
+        // console.log(sampleValues);
+        // console.log(idValues);
 
         // create trace variable
         let trace1 = {
@@ -104,7 +104,21 @@ function getInfo(id) {
 
         // get metadata info
         let metadata = data.metadata;
-        console.log(metadata);
+        // console.log(metadata);
+
+        // filter metadata by id
+        let metaid = metadata.filter(meta => meta.id.toString() === id)[0];
+
+        // selet demo info to display data
+        let demoInfo = d3.select("#sample-metadata");
+
+        // empty before retrieving new data
+        demoInfo.html("");
+
+        // append info to display
+        Object.entries(metaid).forEach((key) => {
+            demoInfo.append("h5").text(key[0].toUpperCase() + ": " + key[1]);
+        });
 
     });
 };
