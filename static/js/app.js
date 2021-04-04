@@ -125,8 +125,9 @@ function getPlot(id) {
             gauge: {
                 axis: { range: [0,10]},
                 threshold: {
-                    value: 10
-                }
+                    value: 10,
+                },
+            bar: {color: "teal"}
             }
         };
 
