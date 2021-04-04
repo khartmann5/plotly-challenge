@@ -110,10 +110,10 @@ function getPlot(id) {
         // console.log(Object.values(washFreq)[6]);
 
         let washNum = Object.values(washFreq)[6];
-        console.log(washNum);
+        // console.log(washNum);
 
         let washFrequency = data.metadata.map(d => d.wfreq);
-        console.log(washFrequency);
+        // console.log(washFrequency);
 
         // set up trace for gauge chart
         let trace3 = {

@@ -5,3 +5,7 @@ Built an interactive dashboard to explore belly button habitats. Used a `D3` lib
 ![Belly Button Dashboard](images/bb_dashboard_01.png)
 
 ![Belly Button Dashboard bubble chart](images/bb_dashboard_02.png)
+
+For an additional challenge a gauge chart was added to plot the weekly washing frequency of the individual.
+
+![Belly Button Dashboard gauge chart](images/bb_dashboard_03.png)
