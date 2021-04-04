@@ -99,30 +99,34 @@ function getPlot(id) {
         Plotly.newPlot("bubble", bubbleData, layout2)
 
 
-        // get washing frequency for guage chart
-        let washfreq = data.metadata.map(d => d.wfreq);
-        // console.log(washfreq);
+        // GAUGE CHART
+        let washFreq = data.metadata.filter(d => d.id.toString() === id)[0];
+        console.log(washFreq);
 
-        // let wfreqid = data.metadata.wfreq.filter(w => w.id.toString() === id)[0];
+        // let wFreq = washFreq.map(row => row[6]);
+        // console.log(wFreq);
+
+        let washFrequency = data.metadata.map(d => d.wfreq);
+        console.log(washFrequency);
 
         // set up trace for gauge chart
-        let trace3 = {
-            domain: { x: [0,1], y: [0,1]},
-            value: washfreq,
-            title: {text: "Scrubs per Week"},
-            type: "indicator",
-            mode: "gauge+number"
-        }
+        // let trace3 = {
+        //     domain: { x: [0,1], y: [0,1]},
+        //     value: wFreq,
+        //     title: {text: "Scrubs per Week"},
+        //     type: "indicator",
+        //     mode: "gauge+number"
+        // }
 
-        // set up layout for gauge chart
-        let layout3 = {
-            width: 600, height: 500, margin: { t: 0, b: 0 }
-        };
+        // // set up layout for gauge chart
+        // let layout3 = {
+        //     width: 600, height: 500, margin: { t: 0, b: 0 }
+        // };
 
-        let gaugeData = [trace3];
+        // let gaugeData = [trace3];
 
-        // create gauge chart
-        Plotly.newPlot("gauge", gaugeData, layout3)
+        // // create gauge chart
+        // Plotly.newPlot("gauge", gaugeData, layout3)
 
     });
 };
