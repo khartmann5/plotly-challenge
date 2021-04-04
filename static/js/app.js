@@ -74,6 +74,7 @@ function getPlot(id) {
         // create horizontal bar plot
         Plotly.newPlot("bar", barData, layout);
         
+        // set up trace for bubble chart
         let trace2 = {
             x: samp.otu_ids,
             y: samp.sample_values,
@@ -85,6 +86,7 @@ function getPlot(id) {
             text: samp.otu_labels
         };
 
+        // set up layout for bubble chart
         let layout2 = {
             xaxis:{title: "OTU ID"},
             height: 600,
@@ -93,7 +95,13 @@ function getPlot(id) {
 
         let bubbleData = [trace2];
 
+        // create bubble chart
         Plotly.newPlot("bubble", bubbleData, layout2)
+
+        // get washing frequency for guage chart
+        let washfreq = data.metadata.map(d => d.washfreq);
+        console.log(washfreq);
+
 
     });
 };
