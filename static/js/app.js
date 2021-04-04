@@ -98,9 +98,12 @@ function getPlot(id) {
         // create bubble chart
         Plotly.newPlot("bubble", bubbleData, layout2)
 
+
         // get washing frequency for guage chart
         let washfreq = data.metadata.map(d => d.wfreq);
-        console.log(washfreq);
+        // console.log(washfreq);
+
+        // let wfreqid = data.metadata.wfreq.filter(w => w.id.toString() === id)[0];
 
         // set up trace for gauge chart
         let trace3 = {
